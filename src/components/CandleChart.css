@@ -1,0 +1,247 @@
+.pro-chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.chart-hud-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0 12px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chart-ohlc-hud {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  flex-wrap: wrap;
+}
+
+.hud-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.6px;
+}
+
+.hud-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hud-item small {
+  color: #64748b;
+  font-weight: 700;
+}
+
+.hud-item b {
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+[data-theme="light"] .hud-item b {
+  color: #1e293b;
+}
+
+.chart-toggles {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mode-toggle {
+  display: flex;
+  padding: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+}
+
+[data-theme="light"] .mode-toggle {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.mode-toggle button {
+  padding: 3px 9px;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.mode-toggle button.active {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+[data-theme="light"] .mode-toggle button.active {
+  background: #ffffff;
+  color: #059669;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.indicator-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  font-size: 10px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+[data-theme="light"] .indicator-btn {
+  border-color: #e2e8f0;
+}
+
+.indicator-btn.active {
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.chart-canvas-area {
+  width: 100%;
+  height: 230px;
+  position: relative;
+}
+
+.chart-legend-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 6px;
+  font-size: 10px;
+  color: #64748b;
+}
+
+[data-theme="light"] .chart-legend-strip {
+  border-top-color: #f1f5f9;
+}
+
+.legend-items {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legend-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend-dot i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.price-dot i { background: #10b981; }
+.ema20-dot i { background: #f59e0b; }
+.ema50-dot i { background: #38bdf8; }
+
+.timeframe-selector {
+  display: flex;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 2px;
+  border-radius: 6px;
+}
+
+[data-theme="light"] .timeframe-selector {
+  background: #f1f5f9;
+}
+
+.timeframe-selector button {
+  background: transparent;
+  border: 0;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.timeframe-selector button.tf-active {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+[data-theme="light"] .timeframe-selector button.tf-active {
+  background: #ffffff;
+  color: #059669;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.pro-chart-tooltip {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  font-size: 11px;
+  color: #e2e8f0;
+  min-width: 140px;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme="light"] .pro-chart-tooltip {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  color: #1e293b;
+}
+
+.tooltip-head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+[data-theme="light"] .tooltip-head {
+  border-bottom-color: #f1f5f9;
+}
+
+.tooltip-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tooltip-grid > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.tooltip-grid span {
+  color: #64748b;
+}
