@@ -2,7 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { 
   LayoutDashboard, ArrowLeftRight, PieChart, TrendingUp, 
   Wallet, BarChart3, Settings, ChevronLeft, ChevronRight,
-  Zap, Shield, HelpCircle, LogOut
+  Zap, Shield, LogOut
 } from 'lucide-react'
 import './Sidebar.css'
 

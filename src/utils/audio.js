@@ -30,7 +30,7 @@ export function playAudio(type = 'click') {
     osc.connect(gain)
     gain.connect(ctx.destination)
 
-    if (type === 'buy') {
+    if (type === 'buy' || type === 'bet') {
       // Ascending futuristic chime
       osc.type = 'sine'
       osc.frequency.setValueAtTime(440, now)
@@ -57,17 +57,28 @@ export function playAudio(type = 'click') {
       gain.gain.exponentialRampToValueAtTime(0.001, now + 0.04)
       osc.start(now)
       osc.stop(now + 0.04)
-    } else if (type === 'success') {
-      // Double bright chime
-      osc.type = 'sine'
-      osc.frequency.setValueAtTime(587.33, now) // D5
-      osc.frequency.setValueAtTime(880, now + 0.08) // A5
-      gain.gain.setValueAtTime(0.1, now)
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35)
+    } else if (type === 'success' || type === 'win') {
+      // High-energy jackpot/win chime (C5 -> E5 -> G5 -> C6 fanfare)
+      osc.type = 'triangle'
+      osc.frequency.setValueAtTime(523.25, now)
+      osc.frequency.setValueAtTime(659.25, now + 0.07)
+      osc.frequency.setValueAtTime(783.99, now + 0.14)
+      osc.frequency.setValueAtTime(1046.50, now + 0.21)
+      gain.gain.setValueAtTime(0.15, now)
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45)
       osc.start(now)
-      osc.stop(now + 0.35)
+      osc.stop(now + 0.45)
+    } else if (type === 'cashout') {
+      // Crispy cash register ding
+      osc.type = 'sine'
+      osc.frequency.setValueAtTime(987.77, now) // B5
+      osc.frequency.setValueAtTime(1318.51, now + 0.08) // E6
+      gain.gain.setValueAtTime(0.14, now)
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.38)
+      osc.start(now)
+      osc.stop(now + 0.38)
     }
-  } catch (err) {
+  } catch {
     // AudioContext might be blocked until user gesture, ignore gracefully
   }
 }

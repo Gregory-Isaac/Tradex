@@ -12,6 +12,7 @@ export default function WithdrawModal({ isOpen, onClose, user, onWithdrawSuccess
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState(false)
+  const [refCode, setRefCode] = useState('')
 
   if (!isOpen) return null
 
@@ -45,6 +46,7 @@ export default function WithdrawModal({ isOpen, onClose, user, onWithdrawSuccess
       }
 
       playAudio('success')
+      setRefCode(`TX-WDR-${Math.random().toString(36).substring(2, 8).toUpperCase()}`)
       setSuccess(true)
       onWithdrawSuccess?.(data.balanceKes)
     } catch (err) {
@@ -175,7 +177,7 @@ export default function WithdrawModal({ isOpen, onClose, user, onWithdrawSuccess
             </div>
             <h3>Payout Initiated</h3>
             <p><strong>KES {Number(amountKes).toLocaleString()}</strong> has been dispatched to your {method === 'mpesa' ? 'M-Pesa line' : 'bank account'}.</p>
-            <p className="waiting-sub">Reference: TX-WDR-{Math.random().toString(36).substring(2, 8).toUpperCase()}</p>
+            <p className="waiting-sub">Reference: {refCode || 'TX-WDR-PROCESSED'}</p>
             <button type="button" className="deposit-submit" style={{ marginTop: 20 }} onClick={reset}>
               Done
             </button>

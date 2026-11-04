@@ -5,13 +5,14 @@ import './TickerTape.css'
 
 const INITIAL_TICKER = [
   { symbol: 'BTC', name: 'Bitcoin', price: 67482.16, change: 2.84, high24: 68120, low24: 65200 },
+  { symbol: 'SCOM', name: 'Safaricom PLC', price: 18.25, change: 2.24, high24: 18.80, low24: 17.90 },
   { symbol: 'ETH', name: 'Ethereum', price: 3521.84, change: 1.62, high24: 3590, low24: 3410 },
+  { symbol: 'EQTY', name: 'Equity Group', price: 44.50, change: 1.80, high24: 45.20, low24: 43.80 },
+  { symbol: 'KCB', name: 'KCB Group', price: 32.10, change: -0.45, high24: 32.80, low24: 31.80 },
+  { symbol: 'XAU', name: 'Gold Spot', price: 2748.50, change: 0.65, high24: 2755, low24: 2732 },
+  { symbol: 'USD/KES', name: 'USD / KES', price: 129.50, change: -0.12, high24: 129.90, low24: 129.10 },
   { symbol: 'SOL', name: 'Solana', price: 182.37, change: -0.74, high24: 188.4, low24: 179.1 },
   { symbol: 'NVDA', name: 'NVIDIA', price: 142.88, change: 4.26, high24: 144.5, low24: 138.2 },
-  { symbol: 'AAPL', name: 'Apple', price: 232.91, change: 0.92, high24: 234.1, low24: 230.8 },
-  { symbol: 'EUR', name: 'EUR / USD', price: 1.0842, change: -0.18, high24: 1.088, low24: 1.081 },
-  { symbol: 'XAU', name: 'Gold Spot', price: 2748.50, change: 0.65, high24: 2755, low24: 2732 },
-  { symbol: 'SPX', name: 'S&P 500', price: 5864.20, change: 0.48, high24: 5878, low24: 5840 },
 ]
 
 export default function TickerTape({ onSelectSymbol, currency = 'USD' }) {

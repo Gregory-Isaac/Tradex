@@ -76,21 +76,25 @@ export default function AuthScreen({ onAuthenticated, onAdminAccess, serviceErro
         <div className="auth-orbit auth-orbit-one" />
         <div className="auth-orbit auth-orbit-two" />
         <div className="auth-brand">
-          <span className="auth-brand-icon"><Activity size={20} /></span>
-          tradex<span>.</span>
-          <span className="auth-pro-badge">PRO</span>
+          <span className="auth-brand-icon" style={{ background: 'linear-gradient(135deg, #00e267, #00b84c)', color: '#060b08' }}>
+            <Activity size={20} />
+          </span>
+          tradex<span style={{ color: '#ffdf00' }}>.</span>
+          <span className="auth-pro-badge" style={{ background: '#ffdf00', color: '#060b08' }}>BETIKA PRO</span>
         </div>
 
         <div className="auth-art-copy">
-          <span className="auth-kicker"><ShieldCheck size={14} /> INSTITUTIONAL TRADING TERMINAL</span>
-          <h1>Trade with clarity.<br />Move with confidence.</h1>
-          <p>Institutional-grade execution, live order book intelligence, quantitative risk metrics, and instant multi-currency treasury.</p>
-          <div className="auth-art-note">
-            <span className="auth-status-dot" /> Ultra-low latency STP market connectivity · Zero fees
+          <span className="auth-kicker" style={{ color: '#ffdf00', borderColor: 'rgba(255, 223, 0, 0.3)' }}>
+            <ShieldCheck size={14} /> KENYA'S #1 PROFESSIONAL TRADING PLATFORM
+          </span>
+          <h1>Trade like a champion.<br />Win with confidence.</h1>
+          <p>Instant M-PESA deposits & payouts, 60s fast turbo trades, 100x crash multipliers, NSE Kenyan bluechips, and KES 10,000,000 Grand Jackpot!</p>
+          <div className="auth-art-note" style={{ borderColor: 'rgba(0, 226, 103, 0.3)', color: '#00e267' }}>
+            <span className="auth-status-dot" style={{ background: '#00e267' }} /> Safaricom Daraja M-PESA Integrated · 0% Withdrawal Fees
           </div>
         </div>
 
-        <div className="auth-art-footer">TradeX Financial Technologies · Global Markets Division</div>
+        <div className="auth-art-footer">TradeX Kenya Technologies · Licensed & Secured</div>
       </div>
 
       <section className="auth-panel-wrap">
@@ -100,12 +104,12 @@ export default function AuthScreen({ onAuthenticated, onAdminAccess, serviceErro
             tradex<span>.</span>
           </div>
 
-          <div className="auth-step-label">INSTITUTIONAL WORKSPACE</div>
-          <h2>{mode === 'signin' ? 'Welcome back' : 'Create free account'}</h2>
+          <div className="auth-step-label">TRADEX BETIKA-PRO WORKSPACE</div>
+          <h2>{mode === 'signin' ? 'Karibu Tena' : 'Create Free Trading Account'}</h2>
           <p className="auth-form-subtitle">
             {mode === 'signin'
-              ? 'Sign in to access your TradeX Pro terminal and portfolio.'
-              : 'Create your account for free and start exploring the trading workspace.'}
+              ? 'Sign in to access your TradeX Betika-Pro trading slip, M-Pesa treasury, and live markets.'
+              : 'Sign up in 30 seconds with your phone number and get instant KES 50,000 demo trading funds.'}
           </p>
 
           <div className="auth-mode-tabs" role="tablist" aria-label="Account access">

@@ -286,17 +286,22 @@
   height: 44px;
   border: 0;
   border-radius: 8px;
-  background: #10b981;
-  color: white;
-  font-size: 13px;
-  font-weight: 700;
+  background: linear-gradient(135deg, #00e267, #00b84c);
+  color: #060b08;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(0, 226, 103, 0.35);
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   cursor: pointer;
-  transition: background 0.15s, transform 0.15s;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+  transition: all 0.16s ease;
+}
+
+.deposit-submit:hover {
+  background: linear-gradient(135deg, #05f271, #00c853);
+  transform: translateY(-1px);
 }
 
 .deposit-submit:hover {

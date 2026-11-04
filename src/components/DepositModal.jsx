@@ -153,9 +153,9 @@ export default function DepositModal({ isOpen, onClose, user, onDepositSuccess }
                   />
                 </div>
                 <div className="deposit-chips">
-                  {[1000, 5000, 10000, 25000, 50000].map((amount) => (
+                  {[100, 500, 1000, 2500, 5000, 10000, 25000].map((amount) => (
                     <button key={amount} type="button" className={Number(kesAmount) === amount ? 'chip-active' : ''} onClick={() => setKesAmount(String(amount))}>
-                      {amount.toLocaleString()}
+                      KES {amount.toLocaleString()}
                     </button>
                   ))}
                 </div>
@@ -163,9 +163,9 @@ export default function DepositModal({ isOpen, onClose, user, onDepositSuccess }
 
               {error && <p className="deposit-error" role="alert">{error}</p>}
 
-              <div className="deposit-note">
-                <Zap size={14} className="deposit-note-icon" />
-                <span>We’ll send an M-Pesa prompt to your phone. Funds are added after payment confirmation.</span>
+              <div className="deposit-note" style={{ background: 'rgba(0, 226, 103, 0.08)', borderColor: 'rgba(0, 226, 103, 0.25)', color: '#c2decb' }}>
+                <Zap size={14} className="deposit-note-icon" style={{ color: 'var(--b-green)' }} />
+                <span>Paybill: <b>290290</b> · 0% Transaction Fees. STK Push will prompt for your M-PESA PIN immediately.</span>
               </div>
 
               <button type="submit" className="deposit-submit" disabled={busy}>

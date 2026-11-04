@@ -1,0 +1,1284 @@
+/* ==========================================================================
+   BETIKA PROFESSIONAL TRADING THEME (TRADEX BETIKA EDITION)
+   Iconic Kenyan Neon Green (#00e267) & Electric Canary Yellow (#ffdf00)
+   ========================================================================== */
+
+:root {
+  --b-green: #00e267;
+  --b-green-hover: #00ca5b;
+  --b-green-dim: rgba(0, 226, 103, 0.12);
+  --b-green-glow: rgba(0, 226, 103, 0.35);
+
+  --b-yellow: #ffdf00;
+  --b-yellow-hover: #f0d000;
+  --b-yellow-dim: rgba(255, 223, 0, 0.14);
+  --b-yellow-glow: rgba(255, 223, 0, 0.35);
+
+  --b-red: #ff3b56;
+  --b-red-dim: rgba(255, 59, 86, 0.14);
+
+  --b-blue: #00a6ff;
+
+  --b-bg-dark: #080f0b;
+  --b-bg-surface: #0e1913;
+  --b-bg-card: #14221b;
+  --b-bg-card-hover: #1b2e24;
+  --b-bg-input: #0b1510;
+  
+  --b-border: #1f3629;
+  --b-border-subtle: rgba(255, 255, 255, 0.08);
+
+  --b-text-white: #ffffff;
+  --b-text-sub: #9bb1a4;
+  --b-text-dim: #60796b;
+
+  --b-radius-sm: 6px;
+  --b-radius-md: 10px;
+  --b-radius-lg: 14px;
+}
+
+/* Master Betika Terminal Override */
+.terminal[data-theme="dark"],
+.terminal {
+  background-color: var(--b-bg-dark) !important;
+  color: var(--b-text-white) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-image: 
+    radial-gradient(circle at 90% 10%, rgba(0, 226, 103, 0.06), transparent 45%),
+    radial-gradient(circle at 10% 80%, rgba(255, 223, 0, 0.04), transparent 45%) !important;
+}
+
+/* Betika Top Global Bar */
+.betika-top-ribbon {
+  background: #060b08;
+  border-bottom: 1px solid var(--b-border);
+  font-size: 11.5px;
+  color: var(--b-text-sub);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 18px;
+  z-index: 100;
+}
+
+.betika-top-ribbon .ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.betika-win-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #c9ded3;
+}
+
+.betika-win-badge {
+  background: var(--b-green-dim);
+  color: var(--b-green);
+  font-weight: 700;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 226, 103, 0.25);
+}
+
+.betika-top-ribbon-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.betika-mpesa-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #00e267;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+/* Betika Primary Header */
+.betika-header {
+  background: var(--b-bg-surface);
+  border-bottom: 1px solid var(--b-border);
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  backdrop-filter: blur(12px);
+}
+
+.betika-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.betika-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.betika-logo-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #00e267, #00a647);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #060b08;
+  font-weight: 900;
+  font-size: 20px;
+  box-shadow: 0 4px 14px var(--b-green-glow);
+}
+
+.betika-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.betika-brand-name {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.betika-brand-name span {
+  color: var(--b-yellow);
+}
+
+.betika-brand-tagline {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: var(--b-green);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Betika Category Navigation Bar */
+.betika-nav-strip {
+  display: flex;
+  align-items: center;
+  background: #09120e;
+  border-bottom: 1px solid var(--b-border);
+  padding: 0 16px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  gap: 4px;
+}
+.betika-nav-strip::-webkit-scrollbar { display: none; }
+
+.betika-nav-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--b-text-sub);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  white-space: nowrap;
+}
+
+.betika-nav-tab:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.betika-nav-tab.active {
+  color: var(--b-yellow);
+  border-bottom-color: var(--b-yellow);
+  background: rgba(255, 223, 0, 0.04);
+}
+
+.betika-tab-badge {
+  background: var(--b-red);
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  animation: pulse-live 1.8s infinite;
+}
+
+.betika-tab-badge.green {
+  background: var(--b-green);
+  color: #060b08;
+}
+
+.betika-tab-badge.yellow {
+  background: var(--b-yellow);
+  color: #060b08;
+}
+
+@keyframes pulse-live {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(0.96); }
+}
+
+/* Header Right Actions */
+.betika-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.betika-balance-pill {
+  background: #0a1410;
+  border: 1px solid var(--b-border);
+  border-radius: 8px;
+  padding: 6px 14px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.betika-balance-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--b-text-sub);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.betika-balance-val {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--b-yellow);
+}
+
+.betika-deposit-btn {
+  background: linear-gradient(135deg, #00e267, #00b84c);
+  color: #060b08;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 13.5px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px var(--b-green-glow);
+  transition: all 0.16s ease;
+}
+
+.betika-deposit-btn:hover {
+  background: linear-gradient(135deg, #05f271, #00c853);
+  transform: translateY(-1px);
+}
+
+.betika-withdraw-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--b-border);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.betika-withdraw-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--b-text-sub);
+}
+
+.betika-slip-toggle-btn {
+  background: #ffdf00;
+  color: #060b08;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--b-yellow-glow);
+}
+
+.betika-slip-badge {
+  background: #060b08;
+  color: #ffdf00;
+  border-radius: 12px;
+  padding: 1px 6px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+/* 3-Column Betika Master Layout */
+.betika-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr 340px;
+  min-height: calc(100vh - 105px);
+  background: var(--b-bg-dark);
+}
+
+@media (max-width: 1240px) {
+  .betika-layout {
+    grid-template-columns: 220px 1fr 320px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .betika-layout {
+    grid-template-columns: 1fr;
+  }
+  .betika-sidebar-left {
+    display: none;
+  }
+}
+
+/* Betika Left Sidebar */
+.betika-sidebar-left {
+  background: var(--b-bg-surface);
+  border-right: 1px solid var(--b-border);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.betika-side-group-title {
+  font-size: 10.5px;
+  font-weight: 800;
+  color: var(--b-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0 8px;
+  margin-bottom: 4px;
+}
+
+.betika-side-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 9px 12px;
+  background: transparent;
+  border: none;
+  border-radius: var(--b-radius-sm);
+  color: var(--b-text-sub);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.betika-side-link:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+}
+
+.betika-side-link.active {
+  background: var(--b-bg-card);
+  color: var(--b-green);
+  font-weight: 700;
+  border-left: 3px solid var(--b-green);
+}
+
+.betika-side-link .side-icon-box {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.betika-side-count {
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 6px;
+  border-radius: 10px;
+  color: var(--b-text-sub);
+}
+
+.betika-jackpot-banner-card {
+  background: linear-gradient(145deg, #182a1f, #0d1a13);
+  border: 1px solid rgba(0, 226, 103, 0.3);
+  border-radius: var(--b-radius-md);
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.betika-jackpot-badge {
+  background: var(--b-yellow);
+  color: #060b08;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.betika-jackpot-banner-card h4 {
+  font-size: 15px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.betika-jackpot-banner-card p {
+  font-size: 11px;
+  color: var(--b-text-sub);
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.betika-jackpot-play-btn {
+  width: 100%;
+  background: var(--b-green);
+  color: #060b08;
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* Betika Center Arena */
+.betika-arena {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+}
+
+/* Promotional Hero Carousel Banner */
+.betika-promo-banner {
+  background: linear-gradient(135deg, #0e1e16 0%, #173223 50%, #0d1e16 100%);
+  border: 1px solid rgba(0, 226, 103, 0.25);
+  border-radius: var(--b-radius-lg);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.betika-promo-banner::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 226, 103, 0.2), transparent 70%);
+}
+
+.betika-promo-left {
+  max-width: 60%;
+  position: relative;
+  z-index: 2;
+}
+
+.betika-promo-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 223, 0, 0.15);
+  color: var(--b-yellow);
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 223, 0, 0.3);
+  margin-bottom: 8px;
+}
+
+.betika-promo-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+}
+
+.betika-promo-title span {
+  color: var(--b-yellow);
+}
+
+.betika-promo-desc {
+  font-size: 13px;
+  color: var(--b-text-sub);
+  margin: 0 0 14px 0;
+  line-height: 1.4;
+}
+
+.betika-promo-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.betika-promo-primary {
+  background: var(--b-yellow);
+  color: #060b08;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.betika-promo-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--b-border);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.betika-promo-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.betika-jackpot-huge-pot {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--b-yellow);
+  text-shadow: 0 0 20px rgba(255, 223, 0, 0.4);
+}
+
+.betika-jackpot-huge-sub {
+  font-size: 11px;
+  color: var(--b-green);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Betika Live Odds Trading Grid */
+.betika-market-list-card {
+  background: var(--b-bg-surface);
+  border: 1px solid var(--b-border);
+  border-radius: var(--b-radius-md);
+  overflow: hidden;
+}
+
+.betika-market-header {
+  padding: 12px 18px;
+  background: #09130e;
+  border-bottom: 1px solid var(--b-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.betika-market-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.betika-market-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.betika-market-subtitle {
+  font-size: 11px;
+  color: var(--b-text-sub);
+}
+
+.betika-filter-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.betika-filter-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--b-border);
+  color: var(--b-text-sub);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.betika-filter-pill.active {
+  background: var(--b-green-dim);
+  border-color: var(--b-green);
+  color: var(--b-green);
+}
+
+/* Individual Asset Match/Trade Row with Betika Odds Boxes */
+.betika-trade-row {
+  display: grid;
+  grid-template-columns: 280px 1fr 140px;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--b-border);
+  transition: background 0.15s ease;
+  gap: 16px;
+}
+
+.betika-trade-row:last-child {
+  border-bottom: none;
+}
+
+.betika-trade-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.betika-asset-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.betika-asset-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.betika-asset-names strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.betika-asset-names span {
+  font-size: 11.5px;
+  color: var(--b-text-sub);
+}
+
+.betika-asset-price-box {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.betika-asset-price {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.betika-asset-change {
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.betika-asset-change.up { color: var(--b-green); }
+.betika-asset-change.down { color: var(--b-red); }
+
+/* Odds Boxes Matrix (The Heart of Betika) */
+.betika-odds-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.betika-odd-btn {
+  background: var(--b-bg-card);
+  border: 1px solid var(--b-border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.14s ease;
+  min-height: 48px;
+}
+
+.betika-odd-btn:hover {
+  border-color: var(--b-yellow);
+  background: var(--b-bg-card-hover);
+  transform: translateY(-1px);
+}
+
+.betika-odd-btn.selected {
+  background: var(--b-yellow) !important;
+  border-color: var(--b-yellow) !important;
+  color: #060b08 !important;
+  box-shadow: 0 3px 12px var(--b-yellow-glow);
+}
+
+.betika-odd-btn.selected .odd-label,
+.betika-odd-btn.selected .odd-val {
+  color: #060b08 !important;
+  font-weight: 900;
+}
+
+.odd-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--b-text-sub);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.odd-val {
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--b-yellow);
+  font-variant-numeric: tabular-nums;
+}
+
+.betika-view-chart-btn {
+  background: transparent;
+  border: 1px solid var(--b-border);
+  color: var(--b-text-sub);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.14s ease;
+}
+
+.betika-view-chart-btn:hover {
+  border-color: var(--b-green);
+  color: var(--b-green);
+}
+
+/* Betika Tradeslip (Right Column) */
+.betika-tradeslip {
+  background: var(--b-bg-surface);
+  border-left: 1px solid var(--b-border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: sticky;
+  top: 64px;
+}
+
+.betika-slip-header {
+  padding: 12px 16px;
+  background: #09130e;
+  border-bottom: 1px solid var(--b-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.betika-slip-tabs {
+  display: flex;
+  background: #060b08;
+  border-radius: 8px;
+  padding: 3px;
+  width: 100%;
+  gap: 2px;
+}
+
+.betika-slip-tab {
+  flex: 1;
+  padding: 7px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--b-text-sub);
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.betika-slip-tab.active {
+  background: var(--b-yellow);
+  color: #060b08;
+}
+
+/* Single / Multi / System mode pills */
+.betika-slip-modes {
+  display: flex;
+  padding: 8px 14px;
+  gap: 8px;
+  background: #0b1510;
+  border-bottom: 1px solid var(--b-border);
+}
+
+.betika-mode-pill {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--b-border);
+  border-radius: 6px;
+  padding: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--b-text-sub);
+  cursor: pointer;
+  text-align: center;
+}
+
+.betika-mode-pill.active {
+  background: var(--b-green-dim);
+  border-color: var(--b-green);
+  color: var(--b-green);
+}
+
+.betika-slip-body {
+  padding: 14px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.betika-slip-card {
+  background: var(--b-bg-card);
+  border: 1px solid var(--b-border);
+  border-radius: 8px;
+  padding: 12px;
+  position: relative;
+  transition: border-color 0.15s ease;
+}
+
+.betika-slip-card:hover {
+  border-color: rgba(255, 223, 0, 0.3);
+}
+
+.betika-slip-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.betika-slip-card-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.betika-slip-card-remove {
+  background: transparent;
+  border: none;
+  color: var(--b-text-dim);
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.betika-slip-card-remove:hover {
+  color: var(--b-red);
+}
+
+.betika-slip-card-outcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0b1510;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-top: 6px;
+}
+
+.betika-outcome-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--b-green);
+}
+
+.betika-outcome-odd {
+  font-size: 13.5px;
+  font-weight: 900;
+  color: var(--b-yellow);
+}
+
+/* Quick Stake Selector */
+.betika-quick-stakes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.betika-stake-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--b-border);
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 6px 2px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.12s ease;
+}
+
+.betika-stake-chip:hover {
+  border-color: var(--b-yellow);
+  background: rgba(255, 223, 0, 0.08);
+}
+
+.betika-stake-chip.selected {
+  background: var(--b-yellow);
+  color: #060b08;
+  border-color: var(--b-yellow);
+}
+
+/* Stake Input & Summary */
+.betika-stake-input-wrap {
+  position: relative;
+  margin-top: 10px;
+}
+
+.betika-stake-input {
+  width: 100%;
+  background: var(--b-bg-input);
+  border: 1px solid var(--b-border);
+  border-radius: 8px;
+  padding: 10px 48px 10px 14px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  box-sizing: border-box;
+}
+
+.betika-stake-input:focus {
+  outline: none;
+  border-color: var(--b-yellow);
+  box-shadow: 0 0 0 2px var(--b-yellow-dim);
+}
+
+.betika-stake-currency {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--b-yellow);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.betika-payout-box {
+  background: #09130e;
+  border: 1px solid var(--b-border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.betika-payout-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--b-text-sub);
+}
+
+.betika-payout-row.highlight {
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  border-top: 1px dashed var(--b-border);
+  padding-top: 8px;
+}
+
+.betika-payout-row.highlight span:last-child {
+  color: var(--b-yellow);
+  font-size: 17px;
+}
+
+.betika-tax-free-badge {
+  background: var(--b-green-dim);
+  color: var(--b-green);
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 3px 6px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid rgba(0, 226, 103, 0.2);
+}
+
+/* Master Place Bet Button */
+.betika-place-bet-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #ffdf00, #ffc400);
+  color: #060b08;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 18px var(--b-yellow-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.16s ease;
+  margin-top: 12px;
+}
+
+.betika-place-bet-btn:hover {
+  background: linear-gradient(135deg, #ffe524, #ffd400);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 223, 0, 0.45);
+}
+
+.betika-place-bet-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Early Cashout Card in My Bets */
+.betika-cashout-card {
+  background: var(--b-bg-card);
+  border: 1px solid var(--b-border);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.betika-cashout-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.betika-cashout-btn {
+  background: linear-gradient(135deg, #00e267, #00b84c);
+  color: #060b08;
+  border: none;
+  border-radius: 6px;
+  padding: 9px;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 3px 12px var(--b-green-glow);
+}
+
+.betika-cashout-btn:hover {
+  background: #00fa72;
+}
+
+/* Fast 60s Binary & Crash Multiplier Views */
+.betika-crash-desk {
+  background: var(--b-bg-surface);
+  border: 1px solid var(--b-border);
+  border-radius: var(--b-radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.betika-crash-multiplier-screen {
+  background: #060c08;
+  border: 1px solid var(--b-border);
+  border-radius: var(--b-radius-md);
+  height: 280px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.betika-crash-huge-num {
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--b-yellow);
+  text-shadow: 0 0 30px rgba(255, 223, 0, 0.4);
+  font-variant-numeric: tabular-nums;
+  z-index: 2;
+}
+
+.betika-crash-huge-num.crashed {
+  color: var(--b-red);
+  text-shadow: 0 0 30px rgba(255, 59, 86, 0.5);
+}
+
+.betika-crash-sub {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--b-green);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+.betika-crash-history-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 0;
+}
+
+.betika-crash-chip {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--b-border);
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--b-yellow);
+  white-space: nowrap;
+}
+
+.betika-crash-chip.high {
+  background: var(--b-green-dim);
+  border-color: var(--b-green);
+  color: var(--b-green);
+}
+
+/* Jackpot Prediction Modal / Desk */
+.betika-jackpot-match-card {
+  background: var(--b-bg-card);
+  border: 1px solid var(--b-border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.betika-jackpot-pick-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.betika-jackpot-pick-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--b-border);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.betika-jackpot-pick-btn.selected {
+  background: var(--b-yellow);
+  color: #060b08;
+  border-color: var(--b-yellow);
+}
+
+/* Mobile Bottom Navigation Bar (like Betika Mobile App) */
+.betika-mobile-bottom-bar {
+  display: none;
+}
+
+@media (max-width: 840px) {
+  .betika-mobile-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #080f0b;
+    border-top: 1px solid var(--b-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1000;
+  }
+
+  .betika-mobile-bottom-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    background: transparent;
+    border: none;
+    color: var(--b-text-sub);
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .betika-mobile-bottom-item.active {
+    color: var(--b-yellow);
+  }
+
+  .betika-trade-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

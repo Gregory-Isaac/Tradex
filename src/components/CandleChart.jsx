@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import {
-  AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Line, ComposedChart
+  AreaChart, Area, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Line, ComposedChart
 } from 'recharts'
-import { SlidersHorizontal, Eye, Maximize2, Sparkles } from 'lucide-react'
+import { SlidersHorizontal, Sparkles } from 'lucide-react'
 import { formatCurrency, formatCompactCurrency } from '../utils/currencies.js'
 import './CandleChart.css'
 
@@ -21,11 +21,13 @@ export default function CandleChart({ asset, range = '1W', onRangeChange, curren
     const list = []
 
     for (let i = 0; i < count; i++) {
-      const swing = (Math.sin(i * 0.6) + Math.cos(i * 0.3) + (Math.random() - 0.45) * 1.5) * (basePrice * volatility)
+      const pseudo1 = ((Math.sin(i * 12.9898) + 1) / 2)
+      const pseudo2 = ((Math.cos(i * 78.233) + 1) / 2)
+      const swing = (Math.sin(i * 0.6) + Math.cos(i * 0.3) + (pseudo1 - 0.45) * 1.5) * (basePrice * volatility)
       const open = Math.round(currentPrice)
       const close = Math.round(open + swing)
-      const high = Math.round(Math.max(open, close) + Math.random() * (basePrice * volatility * 0.5))
-      const low = Math.round(Math.min(open, close) - Math.random() * (basePrice * volatility * 0.5))
+      const high = Math.round(Math.max(open, close) + pseudo1 * (basePrice * volatility * 0.5))
+      const low = Math.round(Math.min(open, close) - pseudo2 * (basePrice * volatility * 0.5))
       const volume = Math.round(Math.abs(swing * 12) + (basePrice * 0.8))
       const isUp = close >= open
 
@@ -61,7 +63,6 @@ export default function CandleChart({ asset, range = '1W', onRangeChange, curren
   }, [asset?.price, asset?.kind, range])
 
   const activePoint = hoverData || data[data.length - 1] || {}
-  const isUp = (activePoint.close || 0) >= (activePoint.open || 0)
 
   return (
     <div className="pro-chart-wrapper">
@@ -216,7 +217,7 @@ export default function CandleChart({ asset, range = '1W', onRangeChange, curren
 }
 
 function CandleShape(props) {
-  const { x, y, width, height, payload, yAxis } = props
+  const { x, width, payload, yAxis } = props
   if (!payload || !yAxis) return null
 
   const { open, close, high, low, isUp } = payload
